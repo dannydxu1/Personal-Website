@@ -15,7 +15,7 @@ const Reveal = ({ children, width = "fit-content" }: Props) => {
     if (isInView) {
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
   return (
     <div style={{ position: "relative", width, overflow: "hidden" }} ref={ref}>
       <motion.div
