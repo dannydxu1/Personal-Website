@@ -8,25 +8,25 @@ interface Experience {
   location: string;
   duration: string;
   highlights: string[];
-  skills: string[];
 }
 
 interface ExperienceSectionProps {
   experiences: Experience[];
-  maxHighlightWidth: string;
 }
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({
   experiences,
-  maxHighlightWidth,
 }) => {
   return (
     <Box>
-      <Heading as="h2" size="lg" mb={4}>
-        Experience
-      </Heading>
       {experiences.map((experience) => (
-        <Box key={experience.id} mb={4} display="flex" flexDirection="column">
+        <Box
+          key={experience.id}
+          mb={4}
+          display="flex"
+          flexDirection="column"
+          minHeight={{ base: "150px", md: "auto" }} // Adjust the minHeight value as per your needs
+        >
           <Box
             display="flex"
             justifyContent="space-between"
@@ -42,18 +42,14 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             justifyContent="space-between"
             alignItems="baseline"
           >
-            <Text color="gray.500" mb={1}>
+            <Text mb={1}>
               {experience.company}
             </Text>
             <Text color="gray.500">{experience.location}</Text>
           </Box>
           <UnorderedList>
             {experience.highlights.map((highlight, index) => (
-              <ListItem
-                key={index}
-                maxWidth={maxHighlightWidth}
-                wordBreak="break-word"
-              >
+              <ListItem key={index} wordBreak="break-word" m={1}>
                 {highlight}
               </ListItem>
             ))}

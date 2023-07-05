@@ -1,29 +1,21 @@
-import {
-  Center,
-  extendTheme,
-  Text,
-  VStack,
-  Box,
-  Heading,
-  Button,
-} from "@chakra-ui/react";
+import { Box, extendTheme } from "@chakra-ui/react";
 import React, { useState, WheelEvent, useEffect } from "react";
 import { NextPage } from "next";
 
-import AboutMePage from "../components/page_components/AboutPage";
+import AboutMePage from "../components/pages/AboutPage";
 import Header from "../components/globals/Header";
-import HomePage from "../components/page_components/HomePage";
-import ProjectsPage from "../components/page_components/ProjectsPage";
-import ResumePage from "../components/page_components/ResumePage";
-import ContactPage from "@/components/page_components/ContactPage";
+import HomePage from "../components/pages/HomePage";
+import ProjectsPage from "../components/pages/ProjectsPage";
+import ResumePage from "../components/pages/ResumePage";
+import ContactPage from "../components/pages/ContactPage";
 
 const Home: NextPage = () => {
   return (
-    <VStack align="center" bgColor="brand.white">
-      <Box className="section-container">
+    <Box bgColor="brand.white">
+      <Header />
+      <Box className="section-container" >
         <HomePage />
       </Box>
-      <Header />
       <Box className="section-container">
         <AboutMePage />
       </Box>
@@ -36,7 +28,7 @@ const Home: NextPage = () => {
       <Box className="section-container">
         <ContactPage />
       </Box>
-    </VStack>
+    </Box>
   );
 };
 

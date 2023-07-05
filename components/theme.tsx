@@ -28,7 +28,7 @@ const theme = extendTheme({
     brand: {
       red: "#ff9f96",
       orange: "#FFC3A0",
-      yellow: "#FDFD96",
+      yellow: "#f7f740",
       green: "#A2E8B1",
       green_dark: "#8ac296",
       blue: "#78DCF0",
@@ -36,6 +36,13 @@ const theme = extendTheme({
       pink: "#FFB8D1",
       white: "#EFEFF0",
     },
+  },
+  breakpoints: {
+    sm: "30em", // 480px
+    md: "48em", // 768px
+    lg: "62em", // 992px
+    xl: "80em", // 1280px
+    "2xl": "96em", // 1536px
   },
 });
 

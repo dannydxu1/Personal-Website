@@ -3,8 +3,8 @@ import {
   FaLinkedin,
   FaGithub,
   FaUser,
-  FaBriefcase,
-  FaCode,
+  FaUserTie,
+  FaList,
   FaEnvelope,
 } from "react-icons/fa";
 import { useState } from "react";
@@ -30,8 +30,8 @@ const Header = () => {
 
   const sections = [
     { name: "About", icon: FaUser },
-    { name: "Experience", icon: FaBriefcase },
-    { name: "Projects", icon: FaCode },
+    { name: "Experience", icon: FaUserTie },
+    { name: "Projects", icon: FaList },
     { name: "Contact", icon: FaEnvelope },
   ];
 
@@ -45,6 +45,7 @@ const Header = () => {
       alignItems="center"
       zIndex="1"
       bgColor="brand.white"
+      ml={2}
     >
       {sections.map(({ name, icon: IconComponent }) => (
         <Link
@@ -52,7 +53,7 @@ const Header = () => {
           onClick={() => handleScrollSection(name)}
           color={hoveredItem === name ? "brand.purple" : "black"}
           _hover={{ color: "brand.blue" }}
-          p="2"
+          p="1"
           bg="transparent" // Make the background transparent
         >
           <Icon as={IconComponent} boxSize="6" />
@@ -62,20 +63,20 @@ const Header = () => {
       <Link href="https://www.linkedin.com/in/dannydxu1/" isExternal>
         <Icon
           as={FaLinkedin}
-          boxSize="10"
+          boxSize="8"
           color={hoveredItem === "LinkedIn" ? "brand.purple" : "black"}
           _hover={{ color: "brand.blue" }}
-          p="2"
+          p="1"
         />
       </Link>
 
       <Link href="https://github.com/dannydxu1" isExternal>
         <Icon
           as={FaGithub}
-          boxSize="10"
+          boxSize="8"
           color={hoveredItem === "GitHub" ? "brand.purple" : "black"}
           _hover={{ color: "brand.blue" }}
-          p="2"
+          p="1"
         />
       </Link>
     </HStack>

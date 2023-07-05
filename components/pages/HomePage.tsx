@@ -6,6 +6,7 @@ import {
   Link,
   Text,
   VStack,
+  useMediaQuery, // Import the useMediaQuery hook
 } from "@chakra-ui/react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import React from "react";
@@ -34,10 +35,13 @@ const HomePage = () => {
     });
   };
 
+  const [isMobile] = useMediaQuery("(max-width: 756px)"); // Set the breakpoint for iPhone XR
+  const boxHeight = isMobile ? "100vh" : "100vh";
+
   return (
     <Box
-      w="100vw"
-      h="100vh"
+      w={isMobile ? "100vw" : { base: "45vw", md: "100vw" }} // Adjust the width based on the device
+      h={boxHeight} // Adjust the height based on the device
       display="flex"
       justifyContent="center"
       alignItems="center"
@@ -51,7 +55,7 @@ const HomePage = () => {
               <Text
                 fontFamily="anybodyVariable"
                 fontWeight="bold"
-                fontSize="8xl"
+                fontSize={isMobile ? "5xl" : "8xl"} // Adjust the font size based on the device
                 color="black"
                 display="inline"
                 verticalAlign="middle"
@@ -59,10 +63,10 @@ const HomePage = () => {
                 DANNY XU
               </Text>
               <Text
-                color="brand.red"
+                color="black"
                 fontFamily="anybodyVariable"
                 fontWeight="bold"
-                fontSize="8xl"
+                fontSize={isMobile ? "5xl" : "8xl"} // Adjust the font size based on the device
                 display="inline"
                 verticalAlign="middle"
                 ml={-2}

@@ -12,47 +12,40 @@ interface Education {
 
 interface EducationSectionProps {
   educations: Education[];
-  maxHighlightWidth: string;
 }
 
-const EducationSection: React.FC<EducationSectionProps> = ({
-  educations,
-  maxHighlightWidth,
-}) => {
+const EducationSection: React.FC<EducationSectionProps> = ({ educations }) => {
   return (
     <Box>
-      <Heading as="h2" size="lg" mb={4}>
-        Education
-      </Heading>
       {educations.map((education) => (
-        <Box key={education.id} mb={4} display="flex" flexDirection="column">
+        <Box
+          key={education.id}
+          mb={4}
+          display="flex"
+          flexDirection="column"
+          minHeight={{ base: "150px", md: "auto" }} // Adjust the minHeight value as per your needs
+        >
           <Box
             display="flex"
             justifyContent="space-between"
             alignItems="baseline"
           >
             <Heading as="h3" size="md" mb={2}>
-              {education.degreeTitle}
+              {education.institution}
             </Heading>
-            <Text color="gray.500">{education.duration}</Text>
+            <Text>{education.duration}</Text>
           </Box>
           <Box
             display="flex"
             justifyContent="space-between"
             alignItems="baseline"
           >
-            <Text color="gray.500" mb={1}>
-              {education.institution}
-            </Text>
-            <Text color="gray.500">{education.location}</Text>
+            <Text mb={1}>{education.degreeTitle}</Text>
+            <Text>{education.location}</Text>
           </Box>
           <UnorderedList>
             {education.highlights.map((highlight, index) => (
-              <ListItem
-                key={index}
-                maxWidth={maxHighlightWidth}
-                wordBreak="break-word"
-              >
+              <ListItem key={index} wordBreak="break-word" m={1}>
                 {highlight}
               </ListItem>
             ))}

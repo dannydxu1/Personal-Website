@@ -1,27 +1,26 @@
-import { Flex, Divider, Text } from "@chakra-ui/react";
+import { Flex, Divider, Text, useMediaQuery } from "@chakra-ui/react";
 
 const SectionTitle = (props: {
   titleName: string;
   rightAlign: boolean;
   color: string;
 }) => {
-  return (
-    <Flex alignItems="center" width="45vw">
-      {props.rightAlign ? (
-        <Divider
-          flex="1"
-          borderColor="black"
-          borderWidth="1px"
-          ml={0}
-          mr={5}
-          mt={-2}
-        />
-      ) : null}
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
 
+  return (
+    <Flex alignItems="center" width={isMobile ? "100%" : "45vw"} maxW="800px">
+      <Divider
+        flex="1"
+        borderColor="black"
+        borderWidth="1px"
+        ml={0}
+        mr={5}
+        mt={-2}
+      />
       <Text
         fontWeight="extrabold"
         fontFamily="anybodyVariable"
-        fontSize="6xl"
+        fontSize={isMobile ? "4xl" : "5xl"}
         textAlign="center"
         mx={2}
         ml={0}
@@ -33,45 +32,21 @@ const SectionTitle = (props: {
         color={props.color}
         fontFamily="anybodyVariable"
         fontWeight="extrabold"
-        fontSize="6xl"
+        fontSize={isMobile ? "4xl" : "6xl"}
         ml={-2}
       >
         .
       </Text>
-      {props.rightAlign ? null : (
-        <Divider
-          flex="1"
-          borderColor="black"
-          borderWidth="1px"
-          ml={5}
-          mr={0}
-          mt={-2}
-        />
-      )}
+      <Divider
+        flex="1"
+        borderColor="black"
+        borderWidth="1px"
+        ml={5}
+        mr={0}
+        mt={-2}
+      />
     </Flex>
   );
 };
 
 export default SectionTitle;
-
-// <HStack>
-//   <Text
-//     color="black"
-//     fontFamily="anybodyVariable"
-//     fontWeight="extrabold"
-//     fontSize={"6xl"}
-//     mt={10}
-//   >
-//     {props.titleName}
-//   </Text>
-//   <Text
-//     color={props.color}
-//     fontFamily="anybodyVariable"
-//     fontWeight="extrabold"
-//     fontSize="6xl"
-//     mt={10}
-//     ml={-2}
-//   >
-//     .
-//   </Text>
-// </HStack>;
