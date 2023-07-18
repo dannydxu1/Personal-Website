@@ -35,17 +35,15 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             <Heading as="h3" size="md" mb={2}>
               {experience.title}
             </Heading>
-            <Text color="gray.500">{experience.duration}</Text>
+            <Text>{experience.duration}</Text>
           </Box>
           <Box
             display="flex"
             justifyContent="space-between"
             alignItems="baseline"
           >
-            <Text mb={1}>
-              {experience.company}
-            </Text>
-            <Text color="gray.500">{experience.location}</Text>
+            <Text mb={1}>{experience.company}</Text>
+            <Text>{experience.location}</Text>
           </Box>
           <UnorderedList>
             {experience.highlights.map((highlight, index) => (

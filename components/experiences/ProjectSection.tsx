@@ -32,7 +32,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ projects }) => {
             <Heading as="h3" size="md" mb={2}>
               {project.title}
             </Heading>
-            <Text color="gray.500">{project.duration}</Text>
+            <Text>{project.duration}</Text>
           </Box>
           <Box
             display="flex"
