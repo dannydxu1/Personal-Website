@@ -26,7 +26,7 @@ const Header = () => {
               mr={4}
             />
           </Link>
-          <Link href="https://www.linkedin.com/in/dannydxu1/" isExternal>
+          <Link href="https://www.linkedin.com/in/ddxu/" isExternal>
             <IconButton
               as={FaLinkedin}
               aria-label="LinkedIn"
