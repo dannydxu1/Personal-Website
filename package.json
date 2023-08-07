@@ -39,6 +39,7 @@
     "react-icons": "^4.9.0",
     "react-parallax": "^3.5.1",
     "react-spring": "^9.7.1",
+    "simple-icons": "^9.9.0",
     "typed.js": "^2.0.16",
     "typescript": "5.1.3"
   },
