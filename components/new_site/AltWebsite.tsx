@@ -18,31 +18,35 @@ import React from "react";
 
 import Header from "./Header";
 import Reveal from "../globals/Reveal";
+import PageStepper from "./PageStepper";
+import ProjectCard from "./ProjectCard";
+import Skills from "./Skills";
+import "../../styles/altwebsite.css";
 
 const AltWebsite = () => {
   return (
-    <Box minH="100vh" pt="15vh">
+    <Box minH="100vh" pt="5vh">
       <Flex flexDirection="column" alignItems="center">
-        <Box w="70vw" mb="1vh">
+        <Box w="60vw" mb="1vh">
           <Header />
         </Box>
         <Reveal>
-          <Box boxSize="200px">
-            <Image
-              src="/LinkedInPhoto.jpeg"
-              alt="A dashing young man"
-              boxSize="200px"
-              borderRadius="full"
-              objectFit="cover"
-            />
-          </Box>
+          <VStack>
+            <Box boxSize="200px">
+              <Image
+                src="/LinkedInPhoto.jpeg"
+                alt="A dashing young man"
+                boxSize="200px"
+                borderRadius="full"
+                objectFit="cover"
+              />
+            </Box>
+            <Text mt={4} fontWeight="bold" fontSize="3xl">
+              👋 Hey, I&apos;m Danny
+            </Text>
+          </VStack>
         </Reveal>
-        <Reveal>
-          <Text mt={4} fontWeight="bold" fontSize="3xl">
-            👋 Hey, I&apos;m Danny
-          </Text>
-        </Reveal>
-        <Box w="70vw" mt="4vh">
+        <Box w="60vw" mt="4vh">
           <Text>
             I am a 2nd year{" "}
             <Text as="span" fontWeight="bold">
@@ -74,15 +78,17 @@ const AltWebsite = () => {
             </Text>{" "}
             internships.
             <br />
-            <br />I am driven by curiosity, thrive in collaborative
-            environments, and seek opportunities for personal and professional
-            growth. My passion lies in leveraging software to tackle novel
-            challenges.
+            <br />I am driven by curiosity and thrive off challenge. Hire me.
           </Text>
           <br />
         </Box>
+        {/* <Skills /> */}
+
+        <Text fontSize="md" color="black" fontWeight="bold">
+          Contact me at dd(dot)xu(at)wisc(dot)edu
+        </Text>
         <Text fontSize="md" color="gray.600" mb="4vh">
-          Last Updated: July 2023
+          Made with ❤️ by Danny Xu. Last update: July 2023
         </Text>
       </Flex>
     </Box>
