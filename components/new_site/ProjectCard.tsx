@@ -1,58 +1,71 @@
-import {
-  Box,
-  Button,
-  Center,
-  Image,
-  HStack,
-  ListItem,
-  Flex,
-  Card,
-  CardFooter,
-  Link,
-  Text,
-  Stack,
-  CardBody,
-  VStack,
-  Heading,
-} from "@chakra-ui/react";
-import { CheckCircleIcon } from "@chakra-ui/icons";
+import { Box, chakra, Image, Flex, Link } from "@chakra-ui/react";
 import React from "react";
 
-import Header from "./Header";
 import Reveal from "../globals/Reveal";
 import "../../styles/altwebsite.css";
 
-const ProjectCard = () => {
+interface Project {
+  imageSrc: string;
+  headline: string;
+  skills: string[];
+  description: string;
+}
+
+const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <Card
-      direction={{ base: "column", sm: "row" }}
-      overflow="hidden"
-      variant="outline"
-    >
-      <Image
-        objectFit="cover"
-        maxW={{ base: "100%", sm: "200px" }}
-        src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-        alt="Caffe Latte"
-      />
+    <Flex p={50} w="full" alignItems="center" justifyContent="center">
+      <Box mx="auto" rounded="lg" shadow="md" bg="white" maxW="xl">
+        <Image
+          roundedTop="lg"
+          w="full"
+          h={64}
+          fit="cover"
+          src={project.imageSrc}
+          alt="Article"
+        />
 
-      <Stack>
-        <CardBody>
-          <Heading size="md">The perfect latte</Heading>
-
-          <Text py="2">
-            Caffè latte is a coffee beverage of Italian origin made with
-            espresso and steamed milk.
-          </Text>
-        </CardBody>
-
-        <CardFooter>
-          <Button variant="solid" colorScheme="blue">
-            Buy Latte
-          </Button>
-        </CardFooter>
-      </Stack>
-    </Card>
+        <Box p={6}>
+          <Box>
+            <chakra.span
+              fontSize="xs"
+              textTransform="uppercase"
+              color="brand.600"
+              _dark={{
+                color: "brand.400",
+              }}
+            >
+              {project.skills.join(", ")}
+            </chakra.span>
+            <Link
+              display="block"
+              color="gray.800"
+              _dark={{
+                color: "white",
+              }}
+              fontWeight="bold"
+              fontSize="2xl"
+              mt={2}
+              _hover={{
+                color: "gray.600",
+                textDecor: "underline",
+              }}
+            >
+              {project.headline}
+            </Link>
+            <chakra.p
+              mt={2}
+              fontSize="sm"
+              color="gray.600"
+              _dark={{
+                color: "gray.400",
+              }}
+            >
+              {project.description}
+            </chakra.p>
+          </Box>
+        </Box>
+      </Box>
+    </Flex>
   );
 };
 

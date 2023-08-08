@@ -19,7 +19,7 @@ import React from "react";
 import Header from "./Header";
 import Reveal from "../globals/Reveal";
 import PageStepper from "./PageStepper";
-import ProjectCard from "./ProjectCard";
+import ProjectView from "./ProjectView";
 import Skills from "./Skills";
 import "../../styles/altwebsite.css";
 
@@ -78,12 +78,11 @@ const AltWebsite = () => {
             </Text>{" "}
             internships.
             <br />
-            <br />I am driven by curiosity and thrive off challenge. Hire me.
           </Text>
           <br />
         </Box>
         {/* <Skills /> */}
-
+        <ProjectView />
         <Text fontSize="md" color="black" fontWeight="bold">
           Contact me at dd(dot)xu(at)wisc(dot)edu
         </Text>
