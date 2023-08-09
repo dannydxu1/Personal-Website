@@ -7,9 +7,9 @@ const TypedIntro = () => {
   useEffect(() => {
     const options = {
       strings: ["👋 Hey, I'm Danny"],
-      typeSpeed: 50, // Typing speed in milliseconds
+      typeSpeed: 25, // Typing speed in milliseconds
       backSpeed: 30, // Backspacing speed in milliseconds
-      startDelay: 500, // Delay before typing starts in milliseconds
+      startDelay: 1000, // Delay before typing starts in milliseconds
       showCursor: true, // Show blinking cursor
       cursorChar: "|", // Custom cursor character
       loop: false, // Whether to loop the animation
