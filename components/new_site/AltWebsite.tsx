@@ -10,11 +10,13 @@ import {
   Link,
   Text,
   VStack,
-  useMediaQuery,
+  Icon,
   Heading,
 } from "@chakra-ui/react";
-import { CheckCircleIcon } from "@chakra-ui/icons";
-import React from "react";
+import { FaBriefcase, FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+
+import React, { useState, useEffect } from "react";
 
 import Header from "./Header";
 import Reveal from "../globals/Reveal";
@@ -24,29 +26,62 @@ import Skills from "./Skills";
 import "../../styles/altwebsite.css";
 
 const AltWebsite = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 800);
+  }, []);
+
+  const screenWidth = isMobile ? "80vw" : "60vw";
+  const pictureSize = isMobile ? "150px" : "200px";
+
   return (
     <Box minH="100vh" pt="5vh">
       <Flex flexDirection="column" alignItems="center">
-        <Box w="60vw" mb="1vh">
+        <Box w={screenWidth} mb="1vh">
           <Header />
         </Box>
         <Reveal>
           <VStack>
-            <Box boxSize="200px">
-              <Image
-                src="/LinkedInPhoto.jpeg"
-                alt="A dashing young man"
-                boxSize="200px"
-                borderRadius="full"
-                objectFit="cover"
-              />
-            </Box>
+            <HStack spacing={5}>
+              <Box boxSize={pictureSize}>
+                <Image
+                  src="/LinkedInPhoto.jpeg"
+                  alt="A dashing young man"
+                  boxSize={pictureSize}
+                  borderRadius="full"
+                  objectFit="cover"
+                  boxShadow="xl"
+                />
+              </Box>
+              {isMobile ? (
+                <Box></Box>
+              ) : (
+                <VStack align="start" spacing={2}>
+                  <HStack spacing={2}>
+                    <Icon as={FaBriefcase} boxSize={5} color="black" />
+                    <Text fontWeight="medium">
+                      Full Stack Software Engineer
+                    </Text>
+                  </HStack>{" "}
+                  <HStack spacing={2}>
+                    <Icon as={MdEmail} boxSize={5} color="black" />
+                    <Text fontWeight="medium">dd(dot)xu(at)wisc(dot)edu</Text>
+                  </HStack>
+                  <HStack spacing={2}>
+                    <Icon as={FaLocationDot} boxSize={5} color="#d91f07" />
+                    <Text fontWeight="medium">San Jose, California</Text>
+                  </HStack>
+                </VStack>
+              )}
+            </HStack>
+
             <Text mt={4} fontWeight="bold" fontSize="3xl">
               👋 Hey, I&apos;m Danny
             </Text>
           </VStack>
         </Reveal>
-        <Box w="60vw" mt="4vh">
+        <Box w={screenWidth} mt="4vh">
           <Text>
             I am a 2nd year{" "}
             <Text as="span" fontWeight="bold">
@@ -81,13 +116,12 @@ const AltWebsite = () => {
           </Text>
           <br />
         </Box>
-        {/* <Skills /> */}
-        <ProjectView />
-        <Text fontSize="md" color="black" fontWeight="bold">
-          Contact me at dd(dot)xu(at)wisc(dot)edu
+        <Skills />
+        <Text fontSize="md" color="gray.600">
+          Made with ❤️ by Danny Xu.
         </Text>
         <Text fontSize="md" color="gray.600" mb="4vh">
-          Made with ❤️ by Danny Xu. Last update: July 2023
+          Last update: July 2023
         </Text>
       </Flex>
     </Box>
