@@ -8,7 +8,7 @@ import HomePage from "../components/pages/HomePage";
 import ProjectsPage from "../components/pages/ProjectsPage";
 import ResumePage from "../components/pages/ResumePage";
 import ContactPage from "../components/pages/ContactPage";
-import AltWebsite from "@/components/new_site/AltWebsite";
+import AltWebsite from "@/components/new_site/Website";
 
 const Home: NextPage = () => {
   return (

@@ -10,7 +10,7 @@ const ColorToggle = () => {
         onChange={toggleColorMode}
         orientation="vertical"
         colorScheme="blue"
-        style={{ transform: "rotate(90deg)" }}
+        style={{ transform: "rotate(-90deg)" }}
       />
     </Box>
   );
