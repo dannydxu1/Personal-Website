@@ -12,6 +12,7 @@ import {
   VStack,
   Icon,
   Heading,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { FaBriefcase, FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
@@ -22,6 +23,7 @@ import Header from "./Header";
 import Reveal from "../globals/Reveal";
 import PageStepper from "./PageStepper";
 import ProjectView from "./ProjectView";
+import TypedIntro from "./TypedIntro";
 import Skills from "./Skills";
 import "../../styles/altwebsite.css";
 
@@ -34,9 +36,16 @@ const AltWebsite = () => {
 
   const screenWidth = isMobile ? "80vw" : "60vw";
   const pictureSize = isMobile ? "150px" : "200px";
+  const iconColor = useColorModeValue("black", "white");
+  const locationColor = useColorModeValue("#d91f07", "#ff1500");
+  const footerColor = useColorModeValue("gray.600", "dracula_primary_blurple");
+  const boxShadowColor = useColorModeValue(
+    "rgba(0, 0, 0, 0.4)",
+    "rgba(255, 255, 255, 0.4)"
+  );
 
   return (
-    <Box minH="100vh" pt="5vh">
+    <Box minH="100vh" pt="1vh">
       <Flex flexDirection="column" alignItems="center">
         <Box w={screenWidth} mb="1vh">
           <Header />
@@ -51,7 +60,7 @@ const AltWebsite = () => {
                   boxSize={pictureSize}
                   borderRadius="full"
                   objectFit="cover"
-                  boxShadow="xl"
+                  boxShadow={`0px 10px 20px -10px ${boxShadowColor}`}
                 />
               </Box>
               {isMobile ? (
@@ -59,26 +68,27 @@ const AltWebsite = () => {
               ) : (
                 <VStack align="start" spacing={2}>
                   <HStack spacing={2}>
-                    <Icon as={FaBriefcase} boxSize={5} color="black" />
+                    <Icon as={FaBriefcase} boxSize={5} color={iconColor} />
                     <Text fontWeight="medium">
-                      Full Stack Software Engineer
+                      Software Engineer - Full Stack Developer
                     </Text>
                   </HStack>{" "}
                   <HStack spacing={2}>
-                    <Icon as={MdEmail} boxSize={5} color="black" />
+                    <Icon as={MdEmail} boxSize={5} color={iconColor} />
                     <Text fontWeight="medium">dd(dot)xu(at)wisc(dot)edu</Text>
                   </HStack>
                   <HStack spacing={2}>
-                    <Icon as={FaLocationDot} boxSize={5} color="#d91f07" />
+                    <Icon
+                      as={FaLocationDot}
+                      boxSize={5}
+                      color={locationColor}
+                    />
                     <Text fontWeight="medium">San Jose, California</Text>
                   </HStack>
                 </VStack>
               )}
             </HStack>
-
-            <Text mt={4} fontWeight="bold" fontSize="3xl">
-              👋 Hey, I&apos;m Danny
-            </Text>
+            <TypedIntro />
           </VStack>
         </Reveal>
         <Box w={screenWidth} mt="4vh">
@@ -117,10 +127,10 @@ const AltWebsite = () => {
           <br />
         </Box>
         <Skills />
-        <Text fontSize="md" color="gray.600">
+        <Text fontSize="md" color={footerColor}>
           Made with ❤️ by Danny Xu.
         </Text>
-        <Text fontSize="md" color="gray.600" mb="4vh">
+        <Text fontSize="md" color={footerColor} mb="4vh">
           Last update: July 2023
         </Text>
       </Flex>

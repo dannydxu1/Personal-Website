@@ -1,7 +1,18 @@
-import { Box, Flex, Link, IconButton, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Link,
+  IconButton,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import ColorToggle from "./ColorToggle";
+
 const Header = () => {
+  const iconColor = useColorModeValue("black", "white"); // Choose appropriate colors for light and dark modes
+
   return (
     <Box as="header" bg="transparent" py={4}>
       <Flex justify="space-between" align="center" mx={4}>
@@ -14,16 +25,19 @@ const Header = () => {
             DX
           </Text>
         </Link>
-        <Flex>
+        <Flex align="center">
+          <Box mr={2}>
+            <ColorToggle />
+          </Box>
           <Link href="https://github.com/dannydxu1" isExternal>
             <IconButton
               as={FaGithub}
               aria-label="GitHub"
               variant="ghost"
-              color="black"
+              color={iconColor}
               fontSize="8px"
               transform="scale(0.8)"
-              mr={4}
+              mr={2}
             />
           </Link>
           <Link href="https://www.linkedin.com/in/ddxu/" isExternal>
@@ -31,7 +45,7 @@ const Header = () => {
               as={FaLinkedin}
               aria-label="LinkedIn"
               variant="ghost"
-              color="black"
+              color={iconColor}
               fontSize="8px"
               transform="scale(0.8)"
             />

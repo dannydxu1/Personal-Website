@@ -5,27 +5,21 @@ import "@fontsource-variable/caveat";
 import "@fontsource-variable/roboto-mono";
 
 const theme = extendTheme({
-  layerStyles: {
-    base: {
-      color: "red",
-      // fontWeight: "medium",
-    },
-    highlighted: {
-      bg: "teal.500",
-      color: "teal.700",
-      borderColor: "orange.500",
-    },
-  },
   fonts: {
     body: "Inter Variable, sans-serif",
     heading: "Inter Variable, sans-serif",
     anybodyVariable: "Anybody Variable",
   },
   colors: {
-    red: "#A30101",
-    pink: "#FFC8CC",
-    white: "#FFFEFE",
+    dracula_accent_pink: "#ce80b3",
+    dracula_accent_cyan: "#85eaf5",
+    dracula_accent_green: "#63e88f",
+    dracula_accent_yellow: "#eaf792",
+    dracula_primary_purple_light: "#bd93f9",
+    dracula_primary_purple_dark: "#282a36",
+    dracula_primary_blurple: "#6372aa",
   },
+
   components: {
     Text: {
       baseStyle: {
@@ -42,46 +36,3 @@ const theme = extendTheme({
 
 export default theme;
 
-// const theme = extendTheme({
-//   fonts: {
-//     // heading: `'Inter Variable', sans-serif`,
-//     // body: `'Inter Variable', sans-serif`,
-//     // anybodyVariable: "Anybody Variable",
-//     // interVariable: "Inter Variable",
-//     // caveatVariable: "Caveat Variable",
-
-//   },
-//   // components: {
-//   //   IconButton: {
-//   //     variants: {
-//   //       gradient: {
-//   //         bgGradient: "linear(to-r, teal.500, cyan.500)",
-//   //         bgClip: "text",
-//   //         _hover: {
-//   //           bgGradient: "linear(to-r, teal.300, cyan.300)",
-//   //         },
-//   //       },
-//   //     },
-//   //   },
-//   // },
-//   // colors: {
-//   //   brand: {
-//   //     red: "#ff9f96",
-//   //     orange: "#FFC3A0",
-//   //     yellow: "#f7f740",
-//   //     green: "#A2E8B1",
-//   //     green_dark: "#8ac296",
-//   //     blue: "#78DCF0",
-//   //     purple: "#B19CD9",
-//   //     pink: "#FFB8D1",
-//   //     white: "#EFEFF0",
-//   //   },
-//   // },
-//   // breakpoints: {
-//   //   sm: "30em", // 480px
-//   //   md: "48em", // 768px
-//   //   lg: "62em", // 992px
-//   //   xl: "80em", // 1280px
-//   //   "2xl": "96em", // 1536px
-//   // },
-// });
