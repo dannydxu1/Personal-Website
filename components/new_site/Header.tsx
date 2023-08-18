@@ -26,9 +26,9 @@ const Header = () => {
           </Text>
         </Link>
         <Flex align="center">
-          <Box mr={2}>
+          {/* <Box mr={2}>
             <ColorToggle />
-          </Box>
+          </Box> */}
           <Link href="https://github.com/dannydxu1" isExternal>
             <IconButton
               as={FaGithub}

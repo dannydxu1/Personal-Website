@@ -23,12 +23,12 @@ const Body: React.FC<BodyProps> = ({ isMobile }) => {
           <Text as="span" fontWeight="bold">
             University of Wisconsin—Madison
           </Text>{" "}
-          and currently doing a co-op as a software engineer at{" "}
+          and currently a Software Engineer at{" "}
           <Text as="span" fontWeight="bold">
             CommScope
           </Text>
-          . I&apos;m working in the Fiber Test Lab, building internal
-          applications to support data retrieval and analysis.
+          . I work in the Fiber Test Lab, building internal
+          applications to support data retrieval and analysis. I recently finished an internship at CommScope and I accepted an offer to work part-time throughout upcoming (2023-2024) school year.
           <br />
           <br />I was previously a communications researcher at the{" "}
           <Text as="span" fontWeight="bold">

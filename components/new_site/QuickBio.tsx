@@ -50,7 +50,7 @@ const QuickBio: React.FC<BodyProps> = ({ isMobile }) => {
               <HStack spacing={2}>
                 <Icon as={FaBriefcase} boxSize={5} color={iconColor} />
                 <Text fontWeight="medium">
-                  Software Engineer - Full Stack Developer
+                  Full Stack Software Engineer
                 </Text>
               </HStack>{" "}
               <HStack spacing={2}>
