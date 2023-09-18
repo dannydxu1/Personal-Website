@@ -6,7 +6,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 
 import ColorToggle from "./ColorToggle";
 
@@ -48,6 +48,17 @@ const Header = () => {
               color={iconColor}
               fontSize="8px"
               transform="scale(0.8)"
+              mr={2}
+            />
+          </Link>
+          <Link href="https://ddxu.studio/resume" isExternal>
+            <IconButton
+              as={FaFileAlt} // Use the FaFileAlt icon for the resume link
+              aria-label="Resume"
+              variant="ghost"
+              color={iconColor}
+              fontSize="8px"
+              transform="scale(0.7)"
             />
           </Link>
         </Flex>
