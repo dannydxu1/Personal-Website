@@ -4,7 +4,7 @@ const ResumePage = () => {
   return (
     <Box p={8} w="100vw" h="100vh">
       <embed
-        src="/2025.pdf"
+        src="/2026.pdf"
         type="application/pdf"
         width="100%"
         height="100%"

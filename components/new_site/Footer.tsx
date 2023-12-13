@@ -13,7 +13,7 @@ const Footer = () => {
           Made with ❤️ by Danny Xu.
         </Text>
         <Text fontSize="md" color={footerColor} mb="4vh">
-          Last update: August 18th, 2023
+          Last update: December 6th, 2023
         </Text>
       </VStack>
     </Reveal>
