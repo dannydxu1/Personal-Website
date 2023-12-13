@@ -15,6 +15,12 @@ import {
 import { MdEmail, MdSend } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
+interface ContactOptionProps {
+  icon: React.ElementType;
+  label: string;
+  detail: string;
+}
+
 const Contact = () => {
   const bg = useColorModeValue("gray.50", "gray.700"); // Change color based on the theme
 
@@ -53,7 +59,11 @@ const Contact = () => {
   );
 };
 
-const ContactOption = ({ icon, label, detail }) => (
+const ContactOption: React.FC<ContactOptionProps> = ({
+  icon,
+  label,
+  detail,
+}) => (
   <HStack
     w="full"
     p={4}
