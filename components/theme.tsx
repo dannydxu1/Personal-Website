@@ -3,12 +3,12 @@ import "@fontsource-variable/anybody";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/caveat";
 import "@fontsource-variable/roboto-mono";
+import "@fontsource/poppins";
 
 const theme = extendTheme({
   fonts: {
-    body: "Inter Variable, sans-serif",
-    heading: "Inter Variable, sans-serif",
-    anybodyVariable: "Anybody Variable",
+    body: "Poppins, sans-serif",
+    heading: "Poppins, sans-serif",
   },
   colors: {
     dracula_accent_pink: "#ce80b3",
@@ -18,6 +18,13 @@ const theme = extendTheme({
     dracula_primary_purple_light: "#bd93f9",
     dracula_primary_purple_dark: "#282a36",
     dracula_primary_blurple: "#6372aa",
+  },
+  styles: {
+    global: {
+      body: {
+        backgroundColor: "#fafafa",
+      },
+    },
   },
 
   components: {
