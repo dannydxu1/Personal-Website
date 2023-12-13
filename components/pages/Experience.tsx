@@ -17,7 +17,7 @@ const Experience = () => {
       bgColor: "#ffffff",
       position: "Software Engineer Intern",
       duration: "Incoming Summer 2024",
-      location: "Ardent Hills, MN",
+      location: "Arden Hills, MN",
       logoUrl: "/bsc.svg",
     },
     {
@@ -53,7 +53,7 @@ const Experience = () => {
       companyUrl: "https://smallsat.umn.edu/",
       bgColor: "#ffffff",
       position: "Research Assistant",
-      duration: "Jan 2020 - Present",
+      duration: "Nov 2022 - May 2023",
       location: "Minneapolis, MN",
       logoUrl: "/umn-aerospace.png",
     },
