@@ -11,15 +11,7 @@ import React from "react";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 const Experience = () => {
   const experiences = [
-    {
-      companyName: "Boston Scientific",
-      companyUrl: "https://www.bostonscientific.com/en-US/Home.html",
-      bgColor: "#ffffff",
-      position: "Software Engineer Intern",
-      duration: "Incoming Summer 2024",
-      location: "Arden Hills, MN",
-      logoUrl: "/bsc.svg",
-    },
+
     {
       companyName: "IDiA Research Lab",
       companyUrl: "https://idia.labs.wisc.edu/",
