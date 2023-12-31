@@ -1,10 +1,24 @@
-import { Box, extendTheme } from "@chakra-ui/react";
-import React, { useState, WheelEvent, useEffect } from "react";
-import { NextPage } from "next";
-import Home from "@/components/pages/Home";
+import { Box, Center, VStack } from "@chakra-ui/react";
+import React from "react";
 
-const App: NextPage = () => {
-  return <Home />;
+import Reveal from "@/components/Reveal";
+import Profile from "@/components/pages/Profile";
+import Experience from "@/components/pages/Experience";
+import Contact from "@/components/pages/Contact";
+import Footer from "@/components/Footer";
+const Portfolio = () => {
+  return (
+    <Center>
+      <Reveal>
+        <VStack>
+          <Profile />
+          <Experience />
+          <Contact />
+          <Footer />
+        </VStack>
+      </Reveal>
+    </Center>
+  );
 };
 
-export default App;
+export default Portfolio;

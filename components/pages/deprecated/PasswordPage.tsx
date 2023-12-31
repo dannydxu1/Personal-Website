@@ -12,7 +12,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-const Home = () => {
+const PasswordPage = () => {
   const [input, setInput] = useState<string>("");
   const router = useRouter();
   const toast = useToast();
@@ -112,4 +112,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default PasswordPage;
